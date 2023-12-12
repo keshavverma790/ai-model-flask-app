@@ -1,0 +1,13 @@
+cryptography
+Flask
+Flask-Bcrypt
+Flask-JWT
+Flask-JWT-Extended
+Flask-Migrate
+Flask-RESTful
+Flask-SQLAlchemy
+scikit-learn
+PyMySQL
+nltk
+python-dotenv
+PyJWT==2.2.0
