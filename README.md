@@ -40,8 +40,8 @@ The application requires the following dependencies, listed in the `requirements
 Clone this repository to your local machine using Git:
 
 ```bash
-git clone https://github.com/your-username/ai-model-flask-app.git
-cd ai-model-flask-app
+git clone https://github.com/your-username/AI_Model_Flask_Application.git
+cd AI_Model_Flask_Application
 ```
 
 ### Install Dependencies
