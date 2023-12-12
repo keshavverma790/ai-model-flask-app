@@ -29,9 +29,9 @@ The application requires the following dependencies, listed in the `requirements
 
 ## API Endpoints
 
-Sentiment Prediction: /model/predict/<string:newTweet>
-User Registration: /user/register
-User Login: /user/login
+- Sentiment Prediction: /model/predict/<string:newTweet>
+- User Registration: /user/register
+- User Login: /user/login
 
 ## Development Environment Setup
 
