@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-model-flask-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask-app
+  template:
+    metadata:
+      labels:
+        app: flask-app
+    spec:
+      containers:
+        - name: flask-app
+          image: keshavverma790/ai-model-flask-app:latest
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 5000
+          env:
+            - name: FLASK_APP
+              value: "app.py"
+            - name: FLASK_ENV
+              value: "production"
+            - name: SECRET_KEY
+              value: "ruQCmfRDBcPC7Al77jF1Oy1XvdrGft2J"
+            - name: DATABASE_URI
+              value: "mysql+pymysql://root:root@host.docker.internal:3306/ai_model_db"
+            - name: VECTORIZER_PATH
+              value: vectoriser.pickle
+            - name: LR_MODEL_PATH
+              value: Sentiment-LR.pickle
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-app-service
+spec:
+  selector:
+    app: flask-app
+  ports:
+    - port: 6000
+      targetPort: 5000
+  type: LoadBalancer

@@ -1,0 +1,4 @@
+requirements.txt
+.env
+Sentiment-LR.pickle
+vectoriser.pickle
