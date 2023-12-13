@@ -1,6 +1,6 @@
 # AI Model Flask Application
 
-This project implements a Flask-based API service that performs sentiment analysis on tweets using a pre-trained machine learning model. Additionally, it includes user authentication APIs, integrates with MySQL to store model requests and results, and is containerized using Docker for streamlined deployment via Kubernetes.
+This project implements a Flask-based API service that performs sentiment analysis on tweets using a [pre-trained machine learning model](https://github.com/keshavverma790/tweets_sentiment_analysis_ai_model/blob/main/ai-model.ipynb). Additionally, it includes user authentication APIs, integrates with MySQL to store model requests and results, and is containerized using Docker for streamlined deployment via Kubernetes.
 
 ## Features
 
@@ -65,6 +65,22 @@ python -m nltk.downloader wordnet
 ### Set Up Environment Variables
 
 Copy the .env.example file to create your own .env file:
+
+```
+# Flask App Configurations
+FLASK_APP=app.py
+FLASK_ENV=development
+
+# Secret Key for Flask Session
+SECRET_KEY=your_secret_key_here
+
+# Database Configuration
+DATABASE_URI=your_database_connection_string_here
+
+# Paths to Model Files
+VECTORIZER_PATH=path_to_vectorizer_model.pickle
+LR_MODEL_PATH=path_to_LR_model.pickle
+```
 
 ```bash
 cp .env.example .env
